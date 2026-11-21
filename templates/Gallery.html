@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Gallery - Dr. Dharmendra Sharma{% endblock %}
+{% block content %}
+<section class="block page">
+  <h1 class="page-title rise">Gallery</h1>
+  <p class="intro rise" style="--d:.15s">Moments from lectures, conferences and campus.</p>
+  <div class="gallery">
+    <!-- EDIT IMAGES: put files in static/images and change names; copy a line to add more -->
+    <figure class="reveal"><img src="{{ url_for('static', filename='images/gallery1.jpg') }}" alt="Event 1" onerror="this.remove()"></figure>
+    <figure class="reveal"><img src="{{ url_for('static', filename='images/gallery2.jpg') }}" alt="Event 2" onerror="this.remove()"></figure>
+    <figure class="reveal"><img src="{{ url_for('static', filename='images/gallery3.jpg') }}" alt="Event 3" onerror="this.remove()"></figure>
+  </div>
+</section>
+{% endblock %}

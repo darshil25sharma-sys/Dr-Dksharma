@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% block title %}Dr. Dharmendra Sharma - Official Website{% endblock %}
+{% block content %}
+<section class="hero">
+  <div class="portrait" id="portrait" aria-hidden="true"></div>
+
+  <div class="hero-text">
+    <h1 class="split" aria-label="Dr. Dharmendra Sharma">Dr. Dharmendra Sharma</h1>
+    <span class="rule"></span>
+    <div class="hero-reveal">
+      <p class="kicker">Associate Professor, Computer Science and Engineering</p>
+      <p class="lead">
+        <!-- EDIT: your intro paragraph -->
+        Dr. Dharmendra Sharma is an Associate Professor at the School of Technology Management and Engineering,
+        Narsee Monjee Institute of Management Studies (NMIMS), Indore Campus.
+      </p>
+      <p>
+        A scholar of Information Storage and Retrieval, his work examines how term weighting shapes retrieval
+        performance, complemented by sound expertise in the implementation and evaluation of machine learning
+        and data science models.
+      </p>
+      <div class="cta">
+        <a class="btn" href="{{ url_for('contact') }}">Get in touch</a>
+        <a class="btn ghost" href="{{ url_for('publications') }}">View publications</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="stats">
+  <div><b data-count="15">0</b><span>Research publications</span></div>
+  <div><b data-count="8">0</b><span>Years at NMIMS Indore</span></div>
+  <div><b data-count="4">0</b><span>Faculty development platforms</span></div>
+</section>
+
+<section class="block">
+  <h2 class="reveal">Biography</h2>
+  <div class="prose reveal">
+    <!-- EDIT: one <p> per paragraph -->
+    <p>Dr. Dharmendra Sharma joined NMIMS Indore Campus in May 2018 as Associate Professor in the Department of Computer Science and Engineering, within the School of Technology Management and Engineering.</p>
+    <p>He earned his doctorate in Computer Science and Engineering from MU, Chittorgarh, in 2016. His doctoral research examined the role of term weighting in the performance of Information Storage and Retrieval systems, and he has further contributed to query knowledge enhancement and duplicate content sharing for Information Retrieval.</p>
+    <p>He has participated in workshops and faculty development programmes organised by IIT Bombay, NPTEL, edX and Coursera. As Faculty Coordinator of the Turing Club, he has led initiatives including the data-focused hackathon Datathon 2021, the Arcania Quiz series, and a credit course on Agile Software Development in collaboration with TCS.</p>
+  </div>
+</section>
+
+<section class="block alt">
+  <h2 class="reveal">Academic Journey</h2>
+  <div class="timeline">
+    <!-- EDIT: one t-item per milestone -->
+    <div class="t-item reveal"><span class="t-year">2012</span><div class="t-body"><h3>Early research contributions</h3><p>First papers on Information Retrieval and on security protocols in wireless LANs, presented at national conferences.</p></div></div>
+    <div class="t-item reveal"><span class="t-year">2013-14</span><div class="t-body"><h3>Systems and text classification</h3><p>Work on swap-partition customisation and SVM-based GA text classification, and a paper at an IEEE conference in Indore.</p></div></div>
+    <div class="t-item reveal"><span class="t-year">2015</span><div class="t-body"><h3>Context-based weighting</h3><p>Presented context-based weighting for the Vector Space Model at the IEEE conference held at MGI Indore, alongside studies on stemming and stop-word techniques.</p></div></div>
+    <div class="t-item reveal"><span class="t-year">2016</span><div class="t-body"><h3>Doctorate, MU Chittorgarh</h3><p>Awarded a Ph.D. in Computer Science and Engineering for research on term weighting in Information Storage and Retrieval systems.</p></div></div>
+    <div class="t-item reveal"><span class="t-year">2018</span><div class="t-body"><h3>Associate Professor, NMIMS Indore</h3><p>Joined the Department of Computer Science and Engineering in May 2018.</p></div></div>
+    <div class="t-item reveal"><span class="t-year">2020-21</span><div class="t-body"><h3>Applied intelligence and student leadership</h3><p>Research on AI-based personalised nutrition and opinion similarity, and Datathon 2021 organised through the Turing Club.</p></div></div>
+    <div class="t-item reveal"><span class="t-year">Today</span><div class="t-body"><h3>Teaching, research and mentoring</h3><p>Associate Professor and Faculty Coordinator of the Turing Club at NMIMS Indore.</p></div></div>
+  </div>
+</section>
+
+<section class="block">
+  <h2 class="reveal">Explore</h2>
+  <div class="grid">
+    <a class="card reveal" href="{{ url_for('research') }}"><h3>Research</h3><p>Information retrieval, machine learning and data science.</p></a>
+    <a class="card reveal" href="{{ url_for('publications') }}"><h3>Publications</h3><p>Journal and conference papers, 2012 to 2020.</p></a>
+    <a class="card reveal" href="{{ url_for('courses') }}"><h3>Courses</h3><p>Teaching, Turing Club and academic initiatives.</p></a>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Dr. Dharmendra Sharma - Official Website{% endblock %}</title>
+  <meta name="description" content="Professor, researcher and mentor. Official website of Dr. Dharmendra Sharma.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <div class="progress" id="progress"></div>
+
+  <!-- ===== MENU: edit tab names here, it changes on every page ===== -->
+  <header class="nav" id="nav">
+    <a href="{{ url_for('home_page') }}" class="brand">Dr. Dharmendra Sharma</a>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span></button>
+    <nav id="menu">
+      <a href="{{ url_for('home_page') }}"   class="{{ 'active' if request.endpoint == 'home_page' }}">About</a>
+      <a href="{{ url_for('research') }}"     class="{{ 'active' if request.endpoint == 'research' }}">Research</a>
+      <a href="{{ url_for('publications') }}" class="{{ 'active' if request.endpoint == 'publications' }}">Publications</a>
+      <a href="{{ url_for('courses') }}"      class="{{ 'active' if request.endpoint == 'courses' }}">Courses</a>
+      <a href="{{ url_for('gallery') }}"      class="{{ 'active' if request.endpoint == 'gallery' }}">Gallery</a>
+      <a href="{{ url_for('contact') }}"      class="{{ 'active' if request.endpoint == 'contact' }}">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Profile photo: sits in the hero, then docks beside the name when you scroll -->
+  <div class="avatar" id="avatar" aria-hidden="true">
+    <div class="disc">
+      <span class="ini">DS</span>
+      <!-- EDIT IMAGE: replace static/images/profile.jpg (any square-ish photo; it is cropped to a circle) -->
+      <img src="{{ url_for('static', filename='images/profile.jpg') }}" alt="" onerror="this.remove()">
+    </div>
+  </div>
+
+  <main>{% block content %}{% endblock %}</main>
+
+  <!-- ===== COMMON FOOTER (shows on every page) ===== -->
+  <footer class="site-footer">
+    <div class="foot-top">
+      <a href="{{ url_for('home_page') }}" class="foot-brand">Dr. Dharmendra Sharma</a>
+      <div class="foot-cols">
+        <ul>
+          <li><a href="{{ url_for('home_page') }}">About</a></li>
+          <li><a href="{{ url_for('research') }}">Research</a></li>
+          <li><a href="{{ url_for('publications') }}">Publications</a></li>
+          <li><a href="{{ url_for('courses') }}">Courses</a></li>
+          <li><a href="{{ url_for('gallery') }}">Gallery</a></li>
+          <li><a href="{{ url_for('contact') }}">Contact</a></li>
+        </ul>
+        <ul>
+          <!-- EDIT: your real links -->
+          <li><a href="#" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="#" target="_blank" rel="noopener">Google Scholar</a></li>
+          <li><a href="mailto:email@university.edu">Email</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="foot-copy">&copy; 2026 Dr. Dharmendra Sharma</p>
+  </footer>
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
